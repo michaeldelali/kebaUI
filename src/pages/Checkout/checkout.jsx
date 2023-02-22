@@ -40,7 +40,8 @@ const Checkout = (props) => {
         title: <p>Order Confirmed</p>,
         text: 'Your order is on its way',
         icon: 'success',
-        timer: 2000,
+        timer: 15000,
+        timerProgressBar: true,
         showConfirmButton: false,
       }).then(() => {
         navigate('/receipt');
@@ -119,7 +120,7 @@ const Checkout = (props) => {
           </select>
       </div>
 
-        <button className="btn btn-lg rounded-0 text-white frame-33" onClick={()=>submitOrder()} >
+        <button className="btn btn-lg rounded-0 text-white frame-33 py-3" onClick={()=>submitOrder()} >
           <span>Place Order</span>
           <span>₵{total.toFixed(2)}
           </span>
