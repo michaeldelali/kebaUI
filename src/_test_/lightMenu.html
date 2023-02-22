@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+      
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+    .menu_card{
+        height: 130px;
+        /* background-color: rgb(210, 63, 63); */
+        /* box-shadow: 0 0 10px rgba(0,0,0,0.2); */
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 10px 30px 10px;
+    }
+
+    .food_img{
+        width: 30%;
+        height: 100%;
+    }
+
+    .food_img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .food_details{
+        width: 70%;
+        height: 100%;
+        padding: 0 2px;
+        background-color: rgb(197 186 186 / 65%);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .food_name{
+        padding: 15px 10px 0 10px;
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        /* background-color: rgb(68, 145, 37); */
+    }
+
+    .food_name h2{
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: rgb(60, 59, 59);
+        margin: 0;
+        text-align: left;
+    }
+
+    .food_desc{
+        width: auto;
+        height: 100px;
+        padding: 0 10px;  
+        /* background-color: rgb(114, 27, 163); */
+        overflow: scroll;
+    }
+
+    .food_desc p{
+        font-size: .8rem;
+        font-weight: 400;
+        padding: 5px 0;
+        color: rgb(15, 14, 14);
+        margin: 0;
+    }
+
+
+    .food_price_count{
+        width: auto;
+        height: auto;
+        /* background-color: rgb(181, 37, 37); */
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        padding: 0 10px 5px 10px;
+    }
+
+    .food_price_count .price{
+        width: 60%;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: rgb(10, 10, 10);
+        /* margin-right: 50px; */
+    }
+
+    .food_price_count .count{
+        width: 40%;
+        height: 100%;
+        /* background-color: rgb(71, 69, 69); */
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        /* padding: 0 10px; */
+    }
+
+    .food_price_count .count input{
+        width:35px;
+        margin: 0;
+        height: 50%;
+        border: 1px solid #ccc;
+        outline: none;
+        text-align: center;
+        box-sizing: border-box;
+        border: none;
+        /* outline: none; */
+        /* text-align: center; */
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: rgb(40, 39, 39);
+    } 
+
+    .food_price_count .count button, .food_price_count .price p{
+        margin: 0;
+    }
+
+</style>
+
+<body>
+    <div class="menu_card">
+        <div class="food_img">
+            <img src="../assets/images/item-4.jpeg" alt="">
+        </div>
+        <div class="food_details">
+            <div class="food_name"><h2>pepperoni pizza</h2></div>
+            <div class="food_desc"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor earum quidem quos saepe porro, hic cum asperiores illum ullam totam delectus ut fugit, dicta sunt nihil exercitationem eaque. Amet, hic.</p></div>
+            <div class="food_price_count">
+                <div class="price">
+                    <p class="price_value">$050.00</p>
+                </div>
+                <div class="count">
+                    <button class="minus">-</button>
+                    <input  type="text" value="200">
+                    <button class="plus">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
