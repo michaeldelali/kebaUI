@@ -8,7 +8,7 @@ export const RoutesList = () => {
     return (
         <Suspense>
             <Routes>
-                <Route path="/menulist" element={<MenuList/>} />
+                <Route path="/" element={<MenuList/>} />
                 <Route path="/checkout" element={<Checkout/>} />
                 <Route path="/receipt" element={<Receipt/>} />
             </Routes>
