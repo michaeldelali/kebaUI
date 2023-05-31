@@ -4,6 +4,9 @@ import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import  { OrderContext } from '../context/OrderContextProvider';
+// import ImageWithBlurhash from './ImageBlurHash';
+import BlurhashImage from './ImageBlurHash';
+// import { BlurhashImage } from 'react-blurhash';
 
 
 const Menu = ({items}) => {
@@ -29,6 +32,8 @@ const Menu = ({items}) => {
     }
 
 
+
+
   return (    
     <div className = 'row menu-content' >
       {
@@ -38,21 +43,24 @@ const Menu = ({items}) => {
             // dynamically import images from assets folder with vitejs and react
 
 
-            const {id,name,img,price,desc} = item;
+            const {menuId,name,image_url,price,description,blurhash} = item;
             const count = order.find(item => item.name === name)?.count || 0; 
-            const imgPath = new URL(`../assets/images/${img}.jpeg`, import.meta.url)
+            const imgPath = new URL(image_url, import.meta.url)
+            console.log("Image From AWS",imgPath)
+
             // const imgPath = import(`../assets/images/item-1.jpeg`);
-            return <div key={id} className="col-sm-6 col-md-6 col-lg-4">
+            return <div key={menuId} className="col-sm-6 col-md-6 col-lg-4">
             <div className="food-card rounded-lg overflow-hidden mb-5 shadow">
               <div className="food-card_img position-relative">
               <img src={imgPath} alt={name} className ='photo'/>
+              {/* <ImageWithBlurhash blurhashHash={blurhash} src={image_url} alt={name} /> */}
               </div>
               <div className="food-card_content">
                 <div className="food-card_title-section overflow-hidden">
                   <h3 className="food-card_title">{name}</h3>
                   <div className="d-flex justify-content-between">
                       <p>
-                          {desc}
+                          {description}
                       </p>
                     </div>
                 </div>
@@ -80,17 +88,23 @@ const Menu = ({items}) => {
           </div>
       }):
         items.map((item) => {
-          const {id,name,img,price,desc} = item;
+          const {menuId,name,image_url,price,description,blurhash} = item;
           const count = order.find(item => item.name === name)?.count || 0; 
-          const imgPath = new URL(`../assets/images/${img}.jpeg`, import.meta.url)
-          // const imgPath = import(`../assets/images/${img}.jpeg`);
-          return <div key={id} className="menu_card">
+          return <div key={menuId} className="menu_card">
           <div className="food_img">
-          <img src={imgPath} alt=""/>
-            </div>
+            {/* <img src={image_url} alt="" /> */}
+            {/* <ImageWithBlurhash blurhashHash={blurhash} src={image_url} alt={name}/> */}
+            <BlurhashImage
+              src={image_url}
+              hash={blurhash}
+              width={102}
+              height={160}
+              alt="My image"
+            />
+        </div>
             <div className="food_details">
                 <div className="food_name"><h2>{name}</h2></div>
-                <div className="food_desc"><p>{desc}</p></div>
+                <div className="food_desc"><p>{description}</p></div>
                 <div className="food_price_count">
                     <div className="price">
                         <p className="price_value">₵{price}</p>

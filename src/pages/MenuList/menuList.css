@@ -152,6 +152,7 @@ Menu
 
 .menu-content{
   padding: 0 10px 0 10px;
+  margin-bottom: 70px;
 }
 .title {
   display: flex;
@@ -422,6 +423,13 @@ Menu
     border-radius: 10px 0 0 10px;
 }
 
+.food_img canvas{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+
 .food_details{
     width: 70%;
     height: 100%;
@@ -441,7 +449,7 @@ Menu
 }
 
 .food_name h2{
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: rgb(60, 59, 59);
     margin: 0;
@@ -457,8 +465,9 @@ Menu
 }
 
 .food_desc p{
-    font-size: .8rem;
+    font-size: .9rem;
     font-weight: 400;
+    /* font-family: 'robo','lato'; */
     padding: 5px 0;
     color: rgb(15, 14, 14);
     margin: 0;
